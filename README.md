@@ -82,4 +82,4 @@ You can modify these files according to your requirements and choose the desired
 ![Screenshot 2024-08-06 162156](https://github.com/user-attachments/assets/585f7cf1-1946-4981-95d6-a7c5c00328bd)
 
 
-![Screenshot 2024-08-06 141342](https://github.com/user-attachments/assets/1b795374-93b4-4a88-9414-985fa5084190)
+
