@@ -6,7 +6,7 @@ resource "google_cloud_run_service" "node_app" {
   template {
     spec {
       containers {
-        image = "someshrao007/node_app:latest"
+        image = "someshrao007/node_app:distroless" #someshrao007/node_app:latest
       }
     }
   }

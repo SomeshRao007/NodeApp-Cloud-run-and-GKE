@@ -1,0 +1,25 @@
+# Ignore source control directories
+.git
+.gitignore
+
+# Ignore Node.js modules
+node_modules/
+
+# Ignore build output
+dist
+build
+
+# Ignore logs
+*.log
+
+# Ignore environment variables
+.env
+
+# Ignore editor directories and files
+.vscode
+.idea
+*.sublime-*
+README.md
+
+# Ignore any other files or directories that are not needed for the build
+*Terraform-GCP/
