@@ -68,7 +68,39 @@ The Terraform configuration files in this project are:
 You can modify these files according to your requirements and choose the desired deployment option by commenting/uncommenting the relevant sections in terraform files.
 
 
-## Output
+### Solutions Implemented for docker file optimisiation
+ 
+1. Use of **Alpine-Based Images** Switched the base image from node:20 to node:20-alpine to leverage a smaller, more efficient Linux distribution.
+2. **Multi-Stage Builds** Implemented multi-stage builds in the Dockerfile, separating the build environment from the runtime environment to ensure only essential files are included in the final image.
+Kept the Dockerfile clean and delineated between build and production stages.
+3. **Integration of Distroless Image** Transitioned from using a traditional runtime image to gcr.io/distroless/nodejs:20-debian12, which only includes the Node.js runtime and its dependencies, reducing the image size and improving security. Link
+4. **Use of Scratch Image** Combined the use of the scratch base image with concepts from Distroless to create a minimalist final image.
+
+
+Ensured all necessary dependencies and executables were present in the scratch image by copying from intermediate stages.
+ 
+ 
+The Main reason i choose **distroless container and scratch image** is Security 
+
+**Security Concern**:
+
+- By using multi-stage builds, we minimized the attack surface of the final image by excluding build tools and dependencies not required at runtime.
+- Distroless images lack a shell and package manager, thereby significantly reducing the potential attack vectors. This contributes to a more secure runtime environment.
+- The scratch image is completely empty and has no built-in utilities or libraries, resulting in an extremely small attack surface.
+ 
+Now the docker image is small it only takes 10-15 sec. to build and secure. all these measures add a layer to the defence of depth. 
+
+
+## Docker Output
+
+![Screenshot 2024-08-09 124825](https://github.com/user-attachments/assets/ab353d17-02f4-42c8-ae60-9d842fb9a9e7)
+
+![Screenshot 2024-08-09 103013](https://github.com/user-attachments/assets/f1a3c1a6-e56c-4423-a06a-c9d60a917f15)
+
+![Screenshot 2024-08-09 130147](https://github.com/user-attachments/assets/bfa288e0-a81b-4749-9998-703de417da39)
+
+
+## Deployment Output 
 
 ![Screenshot 2024-08-06 155901](https://github.com/user-attachments/assets/b0747d5a-7751-4ac1-903d-38b6ba5c7117)
 
